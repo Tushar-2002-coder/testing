@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SMT | Student Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family:'Roboto', sans-serif;
+      background:url('https://raw.githubusercontent.com/Tushar-2002-coder/image-store/refs/heads/main/101.jpg') center/cover no-repeat;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+    .container {
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:20px;
+      padding:30px;
+    }
+    .left-panel {
+      flex: 1;
+      position: relative;
+      padding-right: 10px;
+      margin-left: 200px;
+      border-radius: 20%;
+    }
+    .illustration {
+      display: block;
+      width: 100%;
+      height:100%;
+      max-width: 400px;
+      border-radius: 46%;
+      margin-left: 21.5%;
+    }
+    .right-panel {
+      flex: 1;
+      max-width: 400px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      position: relative;
+    }
+    .right-panel h2 {
+      margin-bottom:10px;
+      font-size:28px;
+      color:#0e1e5f;
+    }
+    .right-panel h2::after {
+      content:'';
+      display:block;
+      width:60px;
+      height:4px;
+      margin-top:6px;
+      background:#e89c29;
+    }
+    .input-group {
+      display:flex;
+      align-items:center;
+      border-bottom:2px solid #ccc;
+      margin-bottom:20px;
+    }
+    .input-group i {
+      margin-right:10px;
+      color:#888;
+      font-size:18px;
+    }
+    .input-group input {
+      border:none;
+      width:100%;
+      padding:12px 0;
+      font-size:16px;
+      outline:none;
+    }
+    .otp-btn, .login-btn {
+      width:100%;
+      padding:12px;
+      background:#f5c000;
+      color:#0e1e5f;
+      font-size:16px;
+      font-weight:bold;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      margin-bottom:15px;
+    }
+    .otp-btn:hover, .login-btn:hover {
+      background: lightgreen;
+      color:black;
+      transform: scale(1.10);
+    }
+    .login-btn { background:#e89c29; color:#fff; }
+    .footer-note {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top:10px;
+      text-align: center;
+    }
+    .footer-note a:hover {
+      background: #e89c29;
+      color:#fff;
+      transform: scale(1.10);
+    }
+    .footer-note a {
+      font-size:14px;
+      text-decoration:none;
+      color: black;
+      background: lightblue;
+      padding:8px 12px;
+      border-radius:6px;
+    }
+    footer {
+      text-align: center;
+      background: transparent;
+      padding: 15px;
+      color: #333;
+    }
+    #passwordBox {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+      z-index: 999;
+      animation: zoomIn 0.3s forwards;
+    }
+    @keyframes zoomIn {
+      to { transform: translate(-50%, -50%) scale(1); }
+    }
+    #passwordBox input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #passwordRequirements {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    #passwordRequirements li {
+      color: black;
+      list-style: none;
+      margin-bottom: 5px;
+    }
+    .valid { color: green; }
+    .invalid { color: red; }
+  
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .left-panel {
+    margin-left: 0;
+    padding-right: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .illustration {
+    max-width: 90%;
+    height: auto;
+    margin-left: 0;
+    border-radius: 20px;
+  }
+  .right-panel {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+  .footer-note {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-note a {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+  }
+  footer {
+    font-size: 14px;
+    padding: 10px;
+  }
+ #passwordBox {
+      display: none;
+      width: 80%;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+      z-index: 999;
+      animation: zoomIn 0.3s forwards;
+    }
+
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <img src="https://raw.githubusercontent.com/Tushar-2002-coder/image-store/refs/heads/main/100.jpg" alt="Graduates" class="illustration"/>
+    </div>
+
+    <div class="right-panel">
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <div class="input-group">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" id="studentName" placeholder="Name of the student" required>
+        </div>
+        <div class="input-group">
+          <i class="fa-solid fa-user-tie"></i>
+          <input type="text" id="fatherName" placeholder="Father's Name" required>
+        </div>
+        <div class="input-group">
+          <i class="fa-solid fa-calendar"></i>
+          <input type="date" id="dob" placeholder="Date Of Birth" required>
+        </div>
+        <div class="input-group">
+          <i class="fa-solid fa-mobile-screen-button"></i>
+          <input type="text" id="mobile" placeholder="Mobile Number" required>
+        </div>
+        <div class="input-group">
+          <i class="fa-solid fa-envelope"></i>
+          <input type="email" id="email" placeholder="Email" required>
+        </div>
+        <button type="button" class="otp-btn" id="generateOtp">Generate OTP</button>
+        <div id="otpSection" style="display:none;">
+          <div class="input-group">
+            <i class="fa-solid fa-key"></i>
+            <input type="text" id="otpInput" placeholder="Enter OTP">
+          </div>
+          <button type="button" class="login-btn" id="openPasswordBox">Submit</button>
+        </div>
+        <div id="passwordBox">
+          <input type="password" id="password" placeholder="Create Password" required>
+          <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+          <ul id="passwordRequirements">
+            <li id="length" class="invalid">✖ Minimum 8 characters</li>
+            <li id="uppercase" class="invalid">✖ At least one uppercase letter</li>
+            <li id="lowercase" class="invalid">✖ At least one lowercase letter</li>
+            <li id="number" class="invalid">✖ At least one number</li>
+          </ul>
+          <button type="submit" class="login-btn">Register</button>
+        </div>
+        <div class="footer-note">
+          <a href="login.html">Back to Login!</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <footer>
+    © 2025 Study Material Tushar, All rights reserved. <p>Designed & Developed by Tushar</p>
+  </footer>
+
+  <script>
+    let generatedOtp = '';
+
+    document.getElementById('generateOtp').addEventListener('click', () => {
+      const mobile = document.getElementById('mobile').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if (!mobile || !email) return alert('Please enter mobile and email first.');
+      generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+      alert(`Your OTP: ${generatedOtp}`);
+      document.getElementById('otpSection').style.display = 'block';
+    });
+
+    document.getElementById('openPasswordBox').addEventListener('click', () => {
+      const otp = document.getElementById('otpInput').value.trim();
+      if (otp !== generatedOtp) return alert('Incorrect OTP!');
+      document.getElementById('passwordBox').style.display = 'block';
+    });
+
+    const passwordInput = document.getElementById('password');
+    passwordInput.addEventListener('input', () => {
+      const val = passwordInput.value;
+      document.getElementById('length').className = val.length >= 8 ? 'valid' : 'invalid';
+      document.getElementById('uppercase').className = /[A-Z]/.test(val) ? 'valid' : 'invalid';
+      document.getElementById('lowercase').className = /[a-z]/.test(val) ? 'valid' : 'invalid';
+      document.getElementById('number').className = /[0-9]/.test(val) ? 'valid' : 'invalid';
+    });
+
+    document.getElementById('signupForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const studentName = document.getElementById('studentName').value.trim();
+      const fatherName = document.getElementById('fatherName').value.trim();
+      const dob = document.getElementById('dob').value;
+      const mobile = document.getElementById('mobile').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+      if (password !== confirmPassword) return alert('Passwords do not match.');
+      if (![...document.querySelectorAll('#passwordRequirements .valid')].length === 4) return alert('Password does not meet all requirements.');
+
+      const userData = { name: studentName, father: fatherName, dob, mobile, email, password };
+      localStorage.setItem(`user_${mobile}`, JSON.stringify(userData));
+      alert('Registration successful! Redirecting to login...');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
