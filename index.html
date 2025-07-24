@@ -16,9 +16,11 @@
       --bg-header: #666;
       --bg-hero: #054a94;
       --bg-footer: #666;					
-      --notice-bg: rgba(0, 0, 0, 0.3);
+      --notice-bg: #0000004d;
       --bg-profile: #fff;
       --text-profile: black;
+      --bg-project:#a9d3ed;
+      --text-project: #101112;
     }
 
     /* === Body === */
@@ -35,9 +37,11 @@
       --bg-header: #111;
       --bg-hero: #012b57;
       --bg-footer: #111;
-      --notice-bg: rgba(255, 255, 255, 0.1);
-      --bg-profile: black;
+      --notice-bg: #ffffff1a;
+      --bg-profile: #000000;
       --text-profile: #fff;
+      --bg-project:#121313;
+      --text-project: #ceddeb;
     }
 
     /* === Header / Top Bar === */
@@ -201,11 +205,11 @@
       margin-left:10px;
     }
     .hamburger span {
-      height: 4px;
-      background: red;
+      height: 3px;
+      background: var(--text-profile);
       border-radius: 10px;
       transition: 0.3s;
-      z-index: 1;
+      z-index: 2000;
     }
     .hamburger.active span:nth-child(1) {
       transform: rotate(45deg) translateY(10px);
@@ -218,18 +222,18 @@
     }
 
     .sidebar {
-      position: fixed;
+      position: absolute;
       top: 85px;
       left: 0;
-      width: 18%;
-      height: 100%;
+      width: 15%;
+      height: 30%;
       background: var(--bg-profile);
       padding: 70px 20px;
       display: none;
       flex-direction: column;
-      gap: 15px;
+      gap: 30px;
       box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
-      z-index: 0;
+      z-index: 1000;
     }
     .sidebar a {
       text-decoration: none;
@@ -371,21 +375,21 @@
       border-radius: 4px;
     }
 	.projects-section {
-  padding: 60px 0;
+  padding: 10px 0;
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background: var(--bg-project);
   text-align: center;
 }
 
 .projects-section h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: var(--text-project);
   margin-bottom: 30px;
 }
 
 .slider-container {
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 1100px;
   margin: auto;
   overflow: hidden;
@@ -398,11 +402,18 @@
 
 .slide {
   min-width: 300px;
-  margin: 0 10px;
-  background: white;
+  margin:  0 10px 20px 10px;
+  background: rgb(221, 223, 226);
+  color: var(--text-project);
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
   overflow: hidden;
+  z-index: 1;
+}
+.slide a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .slide img {
@@ -495,7 +506,7 @@
     margin-top: 20px;
   }
   .sidebar {
-    width: 60%;-
+    width: 60%;
     padding: 50px 10px;
     margin-top: 9px;
   }
@@ -560,17 +571,20 @@
       </div>
     </div>
   </header>
+
 <div class="hamburger hidden" id="menuToggle">
     <span></span><span></span><span></span>
   </div>
 
   <div class="sidebar hidden" id="sidebarMenu">
     <a href="index.html">Home</a>
-    <a href="#">About Us</a>
-    <a href="#">Services</a>
-    <a href="#">Materials</a>
-    <a href="#">Contact Us</a>
+    <a href="about-us.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="materials.html">Materials</a>
+    <a href="contact-us.html">Contact Us</a>
   </div>  
+
+
 
   <div class="profile-btn hidden" id="profileBtn">?</div>
    <!-- Profile Modal -->
@@ -589,6 +603,7 @@
       </div>
     </div>
   </div>
+
 
     <div class="hero">
       <div class="hero-content">
@@ -624,27 +639,35 @@
 
 <section id="students-projects" class="projects-section">
   <div class="container">
-    <h2>Students’ Projects</h2>
+    <h2>Student's Projects</h2>
     
     <div class="slider-container">
       <button class="nav-btn left" id="prevBtn">&#10094;</button>
       
       <div class="slider-track" id="sliderTrack">
         <div class="slide">
+          <a href="project-pages/solar-panel.html" target="_blank">
           <img src="https://raw.githubusercontent.com/Tushar-2002-coder/image-store/refs/heads/main/4.jpg" alt="Muffle Furnace">
           <h3>Muffle Furnace <br><small>(Ceramic Dept.)</small></h3>
+          </a>
         </div>
         <div class="slide">
+          <a href="project-pages/solar-panel.html" target="_blank">
           <img src="https://raw.githubusercontent.com/Tushar-2002-coder/image-store/refs/heads/main/4.jpg" alt="UGIE Logo">
           <h3>UGIE LED Logo <br><small>(Electrical Dept.)</small></h3>
+          </a>
         </div>
         <div class="slide">
+          <a href="project-pages/solar-panel.html" target="_blank">
           <img src="https://raw.githubusercontent.com/Tushar-2002-coder/image-store/refs/heads/main/4.jpg" alt="Steel Plant">
           <h3>Steel Plant Model <br><small>(Metallurgy Dept.)</small></h3>
+          </a>
         </div>
         <div class="slide">
+          <a href="project-pages/solar-panel.html" target="_blank">
           <img src="https://raw.githubusercontent.com/Tushar-2002-coder/image-store/refs/heads/main/4.jpg" alt="Solar Panel">
           <h3>Solar Tracking Panel <br><small>(E&TC Dept., 2018)</small></h3>
+          </a>
         </div>
       </div>
       
