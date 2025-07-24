@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,7 +104,7 @@
       color: var(--text-main);
       padding: 30px 20px;
       text-align: center;
-      margin-top: 18%;
+      margin-top: 10%;
     }
     .need-info h3 {
       margin-bottom: 15px;
@@ -377,7 +378,7 @@
     right: 10px;
   }
   footer {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 14px;
   }
   .info-buttons {
@@ -470,13 +471,55 @@
     <div class="hero">
       <div class="hero-content">
         <h1 id="welcomeText">Welcome to SMT & Technical Education</h1>
-        <p> </p>
-        <p>
-         
-        </p>
-        
+       
       </div>
-      
+      </div>
+      <h3 style="animation: zoomIn 0.8s ease; font-size: 32px; color:#efe06f; text-align: center;">Diploma in Chemical Engineering Resource Portal</h3><br/>
+      <br/>  
+      <section style="border-radius:20px; background: rgb(12, 72, 69); margin: 0 10% 0 10%; padding: 20px; text-align: center; font-size: 28px;">
+    About This Website
+    <h5 style="animation: zoomIn 5s ease; font-size: 18px; font-weight: 20; color:#f6dbdb; text-align: center;">
+    <p>
+        Welcome to <strong>Study Material Tushar</strong>, a dedicated educational platform designed exclusively for 
+      <strong>Diploma in Chemical Engineering</strong> students.
+      </p><br/>
+      <p>This website is created to support diploma students by 
+      providing organized, semester-wise academic resources that make exam preparation easier and more efficient. 
+      </p><br/>
+      <p>
+        
+        Whether you're in your first year or final semester, you’ll find helpful content tailored to your syllabus.
+    </p><br/>
+
+    <p>
+      Our goal is to offer easy access to <strong>subject-wise notes, previous year question papers, important questions,</strong> 
+      and <strong>study materials</strong> for all semesters of the Chemical Engineering diploma course. 
+      </p><br/>
+      <p>
+     Each section is 
+      neatly categorized so you can quickly find the materials you need without wasting time. 
+      </p><br/>
+      <p>Whether you're reviewing 
+      for class tests, semester exams, or board exams, this platform is your complete academic companion.
+    </p><br/>
+
+    <p>
+     In addition to study resources, the website includes a <strong>"Help" section</strong> where students can ask questions 
+      or seek guidance related to chemical engineering topics, career options, and practical training. 
+      </p><br/>
+      <p>We're building a 
+      strong academic community where students can grow together and help each other succeed.
+    </p><br/>
+
+    <p>
+      <strong>Study Material Tushar</strong> is created by a student, for students — with real experience, real needs, and 
+      real solutions in mind.
+      </p><br/>
+      <p>It’s not just a study site, but a growing platform to support the journey of every 
+      <strong>diploma-level chemical engineering</strong> student striving for success in academics and beyond.
+    </p><br/>
+    </h5>
+      </section>
             </div>
 
 
@@ -544,10 +587,10 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   if (userData && userData.name) {
-    document.getElementById("welcomeText").textContent = `Welcome, ${userData.name}! 🎓`;
+    document.getElementById("welcomeText").textContent = `Welcome, ${userData.name}! to the About Section🎓`;
     document.getElementById("profileBtn").textContent = userData.name.charAt(0).toUpperCase();
   } else {
-    document.getElementById("welcomeText").textContent = `Welcome, Guest! 🎓`;
+    document.getElementById("welcomeText").textContent = `Welcome, Guest!🎓`;
     document.getElementById("profileBtn").textContent = "G";
   }
 
